@@ -14,6 +14,10 @@ def splitDigits(number: int) -> List[int]:
     digits = list(string)
     return [int(i) for i in digits]
 
+def joinDigits(digits: List[int]) -> int:
+    string = [str(i) for i in digits]
+    return int(''.join(string))
+
 
 def nearestValidNumber(number: int, verbose: bool) -> Tuple[int, int]:
     """
@@ -38,3 +42,21 @@ def nearestValidNumber(number: int, verbose: bool) -> Tuple[int, int]:
         return number, 0
 
     return number - total, total
+
+
+def numberToSubtractFrom(number: int, verbose: bool) -> int:
+
+    if verbose:
+        print("Finding the number to subtract the number from")
+    digits = splitDigits(number)
+    if len(digits) < 3:
+        return 10 if number < 99 else 20
+
+    subtraction = 20
+    subtractionCheck = 199
+    while subtractionCheck < joinDigits(digits):
+        subtractionCheck += 99
+        print(subtractionCheck)
+        subtraction += 10
+
+    return subtraction
