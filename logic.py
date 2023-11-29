@@ -15,11 +15,6 @@ def splitDigits(number: int) -> List[int]:
     return [int(i) for i in digits]
 
 
-def joinDigits(digits: List[int]) -> int:
-    string = [str(i) for i in digits]
-    return int("".join(string))
-
-
 def nearestValidNumber(number: int, verbose: bool) -> Tuple[int, int]:
     """
     nearestValidNumber finds the nearest integer that is divisable by nine
@@ -69,7 +64,7 @@ def numberToSubtractFrom(number: int, verbose: bool) -> int:
 
     subtraction = 20
     subtractionCheck = 199
-    while subtractionCheck < joinDigits(digits):
+    while subtractionCheck < number:
         subtractionCheck += 99
         subtraction += 10
 
