@@ -15,9 +15,9 @@ def splitDigits(number: int) -> List[int]:
     return [int(i) for i in digits]
 
 
-def nearestValidNumber(number: int, verbose: bool) -> Tuple[int, int]:
+def nearestValidNumber(number: int, verbose: bool = False) -> Tuple[int, int]:
     """
-    nearestValidNumber finds the nearest integer that is divisable by nine
+    nearestValidNumber finds the nearest integer that is divisible by nine
 
     Args:
         number (int): The number to be searched
@@ -40,7 +40,7 @@ def nearestValidNumber(number: int, verbose: bool) -> Tuple[int, int]:
     return number - total, total
 
 
-def numberToSubtractFrom(number: int, verbose: bool) -> int:
+def numberToSubtractFrom(number: int, verbose: bool = False) -> int:
     """
     numberToSubtractFrom finds the number to subtract from
 
@@ -51,7 +51,7 @@ def numberToSubtractFrom(number: int, verbose: bool) -> int:
 
     Args:
         number (int): The number to search
-        verbose (bool): Wether or not the output should be verbose
+        verbose (bool, optional): Wether or not the output should be verbose. Defaults to False.
 
     Returns:
         int: The number to subtract from
@@ -71,13 +71,13 @@ def numberToSubtractFrom(number: int, verbose: bool) -> int:
     return subtraction
 
 
-def divideWholeByNine(number: int, verbose: bool) -> int:
+def divideWholeByNine(number: int, verbose: bool = False) -> int:
     """
     divideWholeByNine divides the whole number by nine
 
     Args:
         number (int): Number to be divided (must be divisible by nine)
-        verbose (bool): Wether or not the output should be verbose
+        verbose (bool, optional): Wether or not the output should be verbose. Defaults to False.
 
     Returns:
         int: The divided number
@@ -87,3 +87,19 @@ def divideWholeByNine(number: int, verbose: bool) -> int:
         print("Dividing valid number")
     digits = splitDigits(number)
     return subtraction - digits[-1]
+
+
+def divideNumberByNine(number: int, verbose: bool = False) -> Tuple[int, int]:
+    """
+    divideNumberByNine divides any whole integer by nine and gives a decimal
+
+    Args:
+        number (int): The number to divide by nine (Can be any whole number)
+        verbose (bool, optional): Wether or not the output should be verbose. Defaults to False.
+
+    Returns:
+        Tuple[int, int]: The number divided by nine (Whole number, Decimal (repeating))
+    """
+    valid, decimal = nearestValidNumber(number, verbose)
+    dividedWhole = divideNumberByNine(number, verbose)
+    return dividedWhole, decimal
