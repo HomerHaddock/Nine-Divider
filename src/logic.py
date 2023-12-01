@@ -104,7 +104,7 @@ def divideNumberByNine(number: int, verbose: bool = False) -> Tuple[int, int]:
         print("Dividing by nine")
         print("Found decimal")
     valid, decimal = nearestValidNumber(number, verbose)
-    dividedWhole = divideWholeByNine(number, verbose)
+    dividedWhole = divideWholeByNine(valid, verbose)
     return dividedWhole, decimal
 
 
