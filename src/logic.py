@@ -108,9 +108,9 @@ def divideNumberByNine(number: int, verbose: bool = False) -> Tuple[int, int]:
     return dividedWhole, decimal
 
 
-def resultToString(result: Tuple[int, int], verbose: bool = False) -> str:
+def formatResults(result: Tuple[int, int], verbose: bool = False) -> str:
     """
-    resultToString formats the divideNumberByNine into a readable string
+    formatResults formats the divideNumberByNine into a readable string
 
     Args:
         result (Tuple[int, int]): The result
