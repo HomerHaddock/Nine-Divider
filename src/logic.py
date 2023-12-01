@@ -100,6 +100,25 @@ def divideNumberByNine(number: int, verbose: bool = False) -> Tuple[int, int]:
     Returns:
         Tuple[int, int]: The number divided by nine (Whole number, Decimal (repeating))
     """
+    if verbose:
+        print("Dividing by nine")
+        print("Found decimal")
     valid, decimal = nearestValidNumber(number, verbose)
-    dividedWhole = divideNumberByNine(number, verbose)
+    dividedWhole = divideWholeByNine(number, verbose)
     return dividedWhole, decimal
+
+
+def resultToString(result: Tuple[int, int], verbose: bool = False) -> str:
+    """
+    resultToString formats the divideNumberByNine into a readable string
+
+    Args:
+        result (Tuple[int, int]): The result
+        verbose (bool, optional): Wether or not the output should be verbose. Defaults to False.
+
+    Returns:
+        str: The result formatted to "$WHOLE.($DECIMAL)"
+    """
+    if verbose:
+        print("Formatting result")
+    return "%s.(%s)" % result
