@@ -16,14 +16,16 @@ To divide numbers below 99 you:
 
 1. Get the sum of the number of digits
 
-   1. If the sum is greater than nine sum the new digits until true
+    1. If the sum is greater than nine sum the new digits until true
+
 2. Subtract the sum of the digits from the number if the sum is not nine
 3. Subtract the number in the one's place from ten
 
-   1. This is the whole part of the result
+    1. This is the whole part of the result
+
 4. Take the sum from step 1. and add it after the decimal point (repeated)
 
-   1. Only if the sum isn't nine
+    1. Only if the sum isn't nine
 
 And you have the number divided by nine!
 
@@ -47,16 +49,18 @@ Still to divide by nine you:
 
 1. Get the sum of the number of digits
 
-   1. If the sum is greater than nine sum the new digits until true
+    1. If the sum is greater than nine sum the new digits until true
+
 2. Subtract the sum of the digits from the number if the sum is not nine
 3. Subtract the number in the one's place from ten,
 
-   plus how many times the number passes a multiple of 99 times 10
+    plus how many times the number passes a multiple of 99 times 10
 
-   1. The formula would be `10 + Passes * 10`
+    1. The formula would be `10 + Passes * 10`
+
 4. Take the sum from step 1. and add it after the decimal point (repeated)
 
-   1. Only if the sum isn't nine
+    1. Only if the sum isn't nine
 
 And you have the number divided by nine!
 
