@@ -10,16 +10,16 @@ parser.add_argument(
     "number",
     type=int,
     nargs="?",
-    default="0",
+    default="-1",
     help="The number to divide by nine, enter nothing to use CLI",
 )
 parser.add_argument("-v", "--verbose", action="store_true")
+parser.add_argument("-s", "--skip-cache", action="store_true", help="Skips both loading and saving to cache")
 args = parser.parse_args()
 
-if args.number == 0:
+if args.number == -1:
     args.number = inp.numerical.integer.newLineInt("Number to divide:", allowNeg=False)
 elif args.number < 0:
     raise ValueError("Number must be positive")
 
-print(args)
-print(logic.divideWholeByNine(args.number, args.verbose))
+print(logic.formatResults(logic.divideNumberByNine(args.number, args.verbose, args.skip_cache)))
