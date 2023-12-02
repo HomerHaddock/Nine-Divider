@@ -114,7 +114,7 @@ def divideNumberByNine(
         if value:
             if verbose:
                 print("Answer found in cache")
-            return value
+            return tuple(value)
 
     if verbose:
         print("Dividing by nine")
