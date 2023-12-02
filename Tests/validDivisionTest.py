@@ -1,4 +1,6 @@
-from logic import divideWholeByNine
+import sys
+sys.path.insert(0, '../src/')
+from logic import divideWholeByNine  # noqa: E402
 
 
 def testDivideNine():
