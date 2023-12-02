@@ -15,7 +15,7 @@ class Cache:
         return self.values[value]
 
     def saveValue(self, value: int, result: Tuple[int, int]) -> None:
-        if not isinstance(value, tuple):
+        if not isinstance(result, tuple):
             raise TypeError("Result is not a tuple")
         if not len(result) == 2:
             raise ValueError("Result must have two values")
@@ -27,5 +27,10 @@ class Cache:
 
 
 def loadCache() -> Cache:
-    with open(cachePath, "r") as cache:
-        return Cache(json.load(cache))
+    try:
+        with open(cachePath, "r") as cache:
+            return Cache(json.load(cache))
+    except FileNotFoundError:
+        with open(cachePath, "w") as cache:
+            json.dump(dict(), cache)
+        return loadCache()
