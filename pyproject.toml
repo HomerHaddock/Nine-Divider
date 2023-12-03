@@ -1,3 +1,4 @@
+license = "CC-BY-NC-SA-4.0"
 [tool.pytest.ini_options]
 python_files = "Tests/*.py"  # to discover testA.py and testB.py
 pythonpath = "src"
